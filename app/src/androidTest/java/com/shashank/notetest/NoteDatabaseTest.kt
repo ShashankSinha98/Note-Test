@@ -4,6 +4,7 @@ import androidx.room.Room
 import androidx.test.core.app.ApplicationProvider
 import com.shashank.notetest.persistence.NoteDao
 import com.shashank.notetest.persistence.NoteDatabase
+import com.shashank.notetest.util.TestUtil
 import org.junit.After
 import org.junit.Before
 
@@ -12,6 +13,8 @@ abstract class NoteDatabaseTest {
 
     // system under test
     private lateinit var noteDatabase: NoteDatabase
+
+
 
     fun getNoteDao(): NoteDao {
         return noteDatabase.getNoteDao()
