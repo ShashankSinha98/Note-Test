@@ -12,17 +12,17 @@ import kotlinx.parcelize.Parcelize
 data class Note (
 
     @PrimaryKey(autoGenerate = true)
-    val id: Int?= null,
+    val id: Int,
 
     @NonNull
     @ColumnInfo(name = "title")
     val title: String,
 
     @ColumnInfo(name = "content")
-    val content: String,
+    val content: String?=null,
 
     @ColumnInfo(name = "timestamp")
-    val timestamp: String
+    val timestamp: String?=null
 ) : Parcelable {
 
     constructor(note: Note): this(note.id, note.title, note.content, note.timestamp)
